@@ -19,10 +19,10 @@ export default function ServicesPage() {
           className="mx-auto max-w-4xl text-center"
         >
           <span className="text-accent font-medium tracking-widest uppercase text-sm mb-4 block">What We Offer</span>
-          <h1 className="text-6xl md:text-8xl font-serif font-bold text-foreground mb-6 tracking-tight">
+          <h1 className="text-4xl md:text-6xl font-serif font-bold text-foreground mb-6 tracking-tight">
             Services
           </h1>
-          <p className="text-xl text-muted-foreground font-light max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground font-light max-w-2xl mx-auto">
             Comprehensive event design and styling from concept to completion, crafted with intention and elegance.
           </p>
         </motion.div>
@@ -61,10 +61,10 @@ export default function ServicesPage() {
             viewport={{ once: true }}
             transition={{ duration: 1.2 }}
           >
-            <h2 className="text-4xl md:text-6xl font-serif font-bold text-foreground mb-8">
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-8">
               Design Spectrum
             </h2>
-            <p className="text-xl text-muted-foreground font-light mb-16 max-w-3xl mx-auto">
+            <p className="text-lg text-muted-foreground font-light mb-16 max-w-3xl mx-auto">
               Whether you&apos;re looking for subtle elegance, statement designs, or complete immersive styling, we tailor our approach to match your vision.
             </p>
 
@@ -82,10 +82,10 @@ export default function ServicesPage() {
                   transition={{ duration: 1, delay: 0.3 + (idx * 0.2) }}
                   className="p-10 bg-white border border-accent/5 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-500"
                 >
-                  <h3 className="font-serif text-2xl font-bold text-foreground mb-4">
+                  <h3 className="font-serif text-xl font-bold text-foreground mb-4">
                     {item.title}
                   </h3>
-                  <p className="text-muted-foreground text-base font-light leading-relaxed">
+                  <p className="text-muted-foreground text-sm font-light leading-relaxed">
                     {item.desc}
                   </p>
                 </motion.div>
@@ -105,7 +105,7 @@ export default function ServicesPage() {
             transition={{ duration: 1 }}
             className="text-center mb-20"
           >
-            <h2 className="text-4xl md:text-6xl font-serif font-bold text-foreground mb-6">
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-6">
               Our Process
             </h2>
             <div className="w-20 h-1 bg-accent mx-auto" />
@@ -127,15 +127,15 @@ export default function ServicesPage() {
                 className="flex flex-col md:flex-row items-center gap-10 text-center md:text-left group"
               >
                 <div className="flex-shrink-0">
-                  <div className="flex items-center justify-center h-20 w-20 rounded-full bg-accent text-accent-foreground font-serif text-3xl font-bold shadow-xl group-hover:scale-110 transition-transform duration-500">
+                  <div className="flex items-center justify-center h-16 w-16 rounded-full bg-accent text-accent-foreground font-serif text-2xl font-bold shadow-xl group-hover:scale-110 transition-transform duration-500">
                     {step.num}
                   </div>
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-3xl font-serif font-bold text-foreground mb-4 group-hover:text-accent transition-colors duration-300">
+                  <h3 className="text-2xl font-serif font-bold text-foreground mb-4 group-hover:text-accent transition-colors duration-300">
                     {step.title}
                   </h3>
-                  <p className="text-xl text-muted-foreground font-light leading-relaxed max-w-2xl mx-auto md:mx-0">
+                  <p className="text-lg text-muted-foreground font-light leading-relaxed max-w-2xl mx-auto md:mx-0">
                     {step.desc}
                   </p>
                 </div>
@@ -151,7 +151,7 @@ export default function ServicesPage() {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 1.5 }}
-        className="py-40 px-4 sm:px-6 lg:px-8 bg-primary text-primary-foreground relative overflow-hidden"
+        className="py-40 px-4 sm:px-6 lg:px-8 bg-secondary text-secondary-foreground relative overflow-hidden"
       >
         <div className="mx-auto max-w-3xl text-center relative z-10">
           <motion.h2 
@@ -159,7 +159,7 @@ export default function ServicesPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 1, delay: 0.3 }}
-            className="text-5xl md:text-7xl font-serif font-bold mb-8"
+            className="text-4xl md:text-5xl font-serif font-bold mb-8"
           >
             Let&apos;s Discuss Your Event
           </motion.h2>
@@ -168,7 +168,7 @@ export default function ServicesPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 1, delay: 0.5 }}
-            className="text-xl md:text-2xl mb-12 text-primary-foreground/80 font-light"
+            className="text-lg md:text-xl mb-12 text-secondary-foreground/80 font-light"
           >
             Schedule a consultation to explore how we can bring your vision to life.
           </motion.p>
@@ -180,7 +180,7 @@ export default function ServicesPage() {
           >
             <Link
               href="/contact"
-              className="inline-block bg-accent text-accent-foreground px-12 py-5 rounded-full font-bold text-lg hover:shadow-2xl hover:scale-105 transition-all duration-500 shadow-xl"
+              className="inline-block bg-accent text-accent-foreground px-10 py-4 rounded-full font-bold text-base hover:shadow-2xl hover:scale-105 transition-all duration-500 shadow-xl"
             >
               Schedule Now
             </Link>

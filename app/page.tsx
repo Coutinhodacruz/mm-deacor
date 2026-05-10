@@ -25,7 +25,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, ease: "easeOut" }}
           >
-            <h1 className="text-6xl md:text-8xl lg:text-[110px] font-serif font-bold text-white mb-6 tracking-tight leading-[0.9] drop-shadow-2xl">
+            <h1 className="text-4xl md:text-5xl lg:text-7xl font-serif font-bold text-white mb-6 tracking-tight leading-[0.9] drop-shadow-2xl">
               Memorable Magical <br className="hidden md:block" /> <span className="text-accent italic font-light">Moments</span>
             </h1>
           </motion.div>
@@ -34,7 +34,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, delay: 0.4, ease: "easeOut" }}
           >
-            <p className="text-lg md:text-2xl text-white/90 mb-12 text-balance max-w-2xl mx-auto font-light leading-relaxed drop-shadow-lg">
+            <p className="text-base md:text-lg text-white/90 mb-12 text-balance max-w-2xl mx-auto font-light leading-relaxed drop-shadow-lg">
               Refined event design that transforms your vision into immersive, unforgettable experiences.
             </p>
           </motion.div>
@@ -89,7 +89,7 @@ export default function Home() {
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="text-foreground font-serif italic text-2xl md:text-4xl leading-relaxed mb-8"
+            className="text-foreground font-serif italic text-xl md:text-2xl leading-relaxed mb-8"
           >
             &ldquo;When creativity meets elegance and intentionality becomes a tangible experience.&rdquo;
           </motion.p>
@@ -105,7 +105,7 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.8 }}
-            className="text-muted-foreground text-xl max-w-2xl mx-auto font-light"
+            className="text-muted-foreground text-lg max-w-2xl mx-auto font-light"
           >
             We believe every celebration deserves meticulous attention to detail, thoughtful design, and a touch of magic. That&apos;s the mmmdecors promise.
           </motion.p>
@@ -121,11 +121,11 @@ export default function Home() {
             viewport={{ once: true, margin: "-100px" }}
             className="text-center mb-24"
           >
-            <h2 className="text-4xl md:text-6xl font-serif font-bold text-foreground mb-6">
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-6">
               Our Services
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-transparent via-accent to-transparent mx-auto mb-8" />
-            <p className="text-muted-foreground text-xl max-w-2xl mx-auto font-light">
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto font-light">
               From concept to completion, we handle every detail with precision and creativity.
             </p>
           </motion.div>
@@ -174,7 +174,7 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-24"
           >
-            <h2 className="text-4xl md:text-6xl font-serif font-bold text-foreground mb-6">
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-6">
               Why Choose mmmdecors
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-transparent via-accent to-transparent mx-auto" />
@@ -204,10 +204,10 @@ export default function Home() {
                   </motion.div>
                 </div>
                 <div>
-                  <h3 className="text-2xl font-serif font-bold text-foreground mb-3 group-hover:text-accent transition-colors">
+                  <h3 className="text-xl font-serif font-bold text-foreground mb-3 group-hover:text-accent transition-colors">
                     {item.title}
                   </h3>
-                  <p className="text-muted-foreground text-lg font-light leading-relaxed">
+                  <p className="text-muted-foreground text-base font-light leading-relaxed">
                     {item.desc}
                   </p>
                 </div>
@@ -227,33 +227,36 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-24"
           >
-            <h2 className="text-4xl md:text-6xl font-serif font-bold text-foreground mb-6">
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-6">
               Client Stories
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-transparent via-accent to-transparent mx-auto mb-8" />
-            <p className="text-muted-foreground text-xl max-w-2xl mx-auto font-light">
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto font-light">
               Real moments, real feedback from those we&apos;ve had the honor to design for.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-            {testimonials.map((testimonial, idx) => (
-              <motion.div 
-                key={testimonial.id} 
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 1, delay: idx * 0.15 }}
-              >
-                <TestimonialCard
-                  name={testimonial.name}
-                  event={testimonial.event}
-                  quote={testimonial.quote}
-                  featured={idx === 0}
-                />
-              </motion.div>
-            ))}
-          </div>
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1 }}
+            className="relative w-full overflow-hidden flex" 
+            style={{ maskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)' }}
+          >
+            <div className="flex w-max animate-marquee gap-8 py-4">
+              {[...testimonials, ...testimonials].map((testimonial, idx) => (
+                <div key={`${testimonial.id}-${idx}`} className="w-[320px] md:w-[380px] shrink-0">
+                  <TestimonialCard
+                    name={testimonial.name}
+                    event={testimonial.event}
+                    quote={testimonial.quote}
+                    featured={idx % testimonials.length === 0}
+                  />
+                </div>
+              ))}
+            </div>
+          </motion.div>
         </div>
       </section>
 
@@ -262,7 +265,7 @@ export default function Home() {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
-        className="relative py-40 px-4 sm:px-6 lg:px-8 bg-primary text-primary-foreground overflow-hidden"
+        className="relative py-40 px-4 sm:px-6 lg:px-8 bg-secondary text-secondary-foreground overflow-hidden"
       >
         <div className="absolute inset-0">
           <motion.div 
@@ -271,7 +274,7 @@ export default function Home() {
               opacity: [0.1, 0.2, 0.1]
             }}
             transition={{ duration: 10, repeat: Infinity }}
-            className="absolute top-0 left-0 w-[500px] h-[500px] bg-accent rounded-full mix-blend-screen filter blur-[100px]" 
+            className="absolute top-0 left-0 w-[500px] h-[500px] bg-accent rounded-full mix-blend-multiply filter blur-[100px] opacity-50" 
           />
           <motion.div 
             animate={{ 
@@ -279,7 +282,7 @@ export default function Home() {
               opacity: [0.1, 0.15, 0.1]
             }}
             transition={{ duration: 8, repeat: Infinity, delay: 1 }}
-            className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-accent rounded-full mix-blend-screen filter blur-[120px]" 
+            className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-accent rounded-full mix-blend-multiply filter blur-[120px] opacity-50" 
           />
         </div>
 
@@ -288,7 +291,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-5xl md:text-7xl font-serif font-bold mb-10 tracking-tight"
+            className="text-4xl md:text-5xl font-serif font-bold mb-10 tracking-tight"
           >
             Ready to Create Magic?
           </motion.h2>
@@ -297,7 +300,7 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-xl md:text-2xl mb-12 text-primary-foreground/80 font-light max-w-2xl mx-auto"
+            className="text-lg md:text-xl mb-12 text-secondary-foreground/80 font-light max-w-2xl mx-auto"
           >
             Let&apos;s talk about your vision and bring it to life with intention and elegance.
           </motion.p>

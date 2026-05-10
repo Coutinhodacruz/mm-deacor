@@ -13,16 +13,16 @@ export function TestimonialCard({
 }: TestimonialCardProps) {
   return (
     <div
-      className={`group relative overflow-hidden rounded-sm transition-all duration-300 hover:shadow-xl hover:border-accent ${
+      className={`group relative overflow-hidden rounded-xl transition-all duration-300 hover:shadow-xl hover:border-accent flex flex-col h-full ${
         featured
-          ? 'p-8 md:p-12 bg-gradient-to-br from-secondary to-secondary/80 border border-border hover:from-secondary hover:to-accent/10'
+          ? 'p-6 bg-gradient-to-br from-secondary to-secondary/80 border border-border hover:from-secondary hover:to-accent/10'
           : 'p-6 bg-card border border-border hover:bg-card/80'
       }`}
     >
       {/* Background accent glow on hover */}
       <div className="absolute inset-0 bg-gradient-to-br from-accent/0 to-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       
-      <div className="relative">
+      <div className="relative flex flex-col flex-grow">
         {/* Star Rating */}
         <div className="mb-6 flex items-center gap-1">
           {[...Array(5)].map((_, i) => (
@@ -38,15 +38,14 @@ export function TestimonialCard({
 
         {/* Quote */}
         <blockquote
-          className={`${
-            featured ? 'text-lg md:text-xl' : 'text-base'
-          } text-foreground font-serif italic mb-6 leading-relaxed group-hover:text-foreground/95 transition-colors duration-300`}
+          className="text-base text-foreground font-serif italic mb-6 leading-relaxed group-hover:text-foreground/95 transition-colors duration-300 line-clamp-4"
+          title={quote}
         >
           &quot;{quote}&quot;
         </blockquote>
 
         {/* Footer */}
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between mt-auto">
           <div>
             <p className="font-semibold text-foreground group-hover:text-accent transition-colors duration-300">
               {name}

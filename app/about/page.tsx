@@ -36,10 +36,10 @@ export default function AboutPage() {
           className="mx-auto max-w-4xl text-center relative z-10"
         >
           <span className="text-accent font-bold tracking-[0.3em] uppercase text-xs mb-6 block">The Heart of mmmdecors</span>
-          <h1 className="text-7xl md:text-[100px] font-serif font-bold text-foreground mb-8 tracking-tight leading-none">
+          <h1 className="text-5xl md:text-7xl font-serif font-bold text-foreground mb-8 tracking-tight leading-none">
             About <span className="italic font-light text-accent/80">Us</span>
           </h1>
-          <p className="text-xl md:text-2xl text-foreground/70 font-serif italic mb-10 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-foreground/70 font-serif italic mb-10 max-w-2xl mx-auto leading-relaxed">
             At mmmdecors, design is not just what we do - it&apos;s who we are.
           </p>
           <div className="w-24 h-1 bg-accent/20 mx-auto rounded-full" />
@@ -102,13 +102,13 @@ export default function AboutPage() {
               className="lg:col-span-7 text-left"
             >
               <span className="text-accent font-bold tracking-[0.2em] uppercase text-xs mb-4 block">Meet the Designer</span>
-              <h2 className="text-5xl md:text-7xl font-serif font-bold text-foreground mb-4 leading-tight">
+              <h2 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-4 leading-tight">
                 Nikie <span className="text-accent">Rowaiye</span>
               </h2>
               
               <div className="w-20 h-0.5 bg-accent mb-10" />
 
-              <div className="space-y-4 text-lg text-foreground/70 leading-normal font-light max-w-2xl">
+              <div className="space-y-4 text-base text-foreground/70 leading-normal font-light max-w-2xl">
                 <p>
                   Led by Nikie Rowaiye, a certified wedding planner and certified event designer, mmmdecors brings years of experience, creativity, and thoughtful execution to every event. Nike&apos;s journey into the world of design started early, inspired by her mother, who owned a design company. Growing up in a creative environment shaped her eye for detail and her passion for transforming ideas into beautiful realities.
                 </p>
@@ -121,7 +121,7 @@ export default function AboutPage() {
                 <p>
                   When she&apos;s not designing or planning, Nike enjoys relaxing with her favorite TV shows, exploring new ideas and inspirations - moments that continue to fuel her creativity and passion for what she does.
                 </p>
-                <p className="text-2xl font-serif font-bold text-accent pt-6 leading-tight">
+                <p className="text-xl font-serif font-bold text-accent pt-6 leading-tight">
                   At mmmdecors, we don&apos;t just plan events - we create memorable, magical moments that leave a lasting impression.
                 </p>
                 
@@ -151,7 +151,7 @@ export default function AboutPage() {
             className="text-center mb-24"
           >
             <span className="text-accent font-bold tracking-[0.2em] uppercase text-xs mb-4 block">Excellence & Credentials</span>
-            <h2 className="text-4xl md:text-6xl font-serif font-bold text-foreground mb-6 text-balance">Our Foundation</h2>
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-6 text-balance">Our Foundation</h2>
             <div className="w-12 h-0.5 bg-accent mx-auto" />
           </motion.div>
           
@@ -166,7 +166,7 @@ export default function AboutPage() {
                 className="p-10 bg-white border border-accent/5 hover:border-accent/20 hover:shadow-[0_20px_50px_rgba(0,0,0,0.05)] transition-all duration-500 rounded-[2rem] group relative overflow-hidden"
               >
                 <div className="relative z-10">
-                  <h3 className="font-serif font-bold text-2xl text-foreground mb-4 group-hover:text-accent transition-colors duration-300">
+                  <h3 className="font-serif font-bold text-xl text-foreground mb-4 group-hover:text-accent transition-colors duration-300">
                     {item.title}
                   </h3>
                   <p className="text-foreground/60 text-sm leading-relaxed font-light">
@@ -193,8 +193,8 @@ export default function AboutPage() {
               viewport={{ once: true }}
               transition={{ duration: 1.5 }}
             >
-              <h2 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-8">Our Core Values</h2>
-              <p className="text-xl text-muted-foreground font-light mb-12">
+              <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-8">Our Core Values</h2>
+              <p className="text-lg text-muted-foreground font-light mb-12">
                 Every project we undertake is guided by a set of unwavering principles that define the mmmdecors experience.
               </p>
               <div className="relative h-96 rounded-3xl overflow-hidden shadow-2xl">
@@ -222,10 +222,10 @@ export default function AboutPage() {
                     {idx + 1}
                   </div>
                   <div>
-                    <h3 className="font-serif font-bold text-2xl text-foreground mb-3 group-hover:text-accent transition-colors">
+                    <h3 className="font-serif font-bold text-xl text-foreground mb-3 group-hover:text-accent transition-colors">
                       {value.title}
                     </h3>
-                    <p className="text-muted-foreground font-light leading-relaxed text-lg">
+                    <p className="text-muted-foreground font-light leading-relaxed text-base">
                       {value.desc}
                     </p>
                   </div>

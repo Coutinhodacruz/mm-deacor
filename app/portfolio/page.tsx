@@ -18,10 +18,10 @@ export default function PortfolioPage() {
           className="mx-auto max-w-4xl text-center"
         >
           <span className="text-accent font-medium tracking-widest uppercase text-sm mb-4 block">Our Work</span>
-          <h1 className="text-6xl md:text-8xl font-serif font-bold text-foreground mb-6 tracking-tight">
+          <h1 className="text-4xl md:text-6xl font-serif font-bold text-foreground mb-6 tracking-tight">
             Portfolio
           </h1>
-          <p className="text-xl text-muted-foreground font-light max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground font-light max-w-2xl mx-auto">
             A glimpse into the magical events we&apos;ve had the honor to design and create, where every detail tells a story.
           </p>
         </motion.div>
@@ -40,7 +40,7 @@ export default function PortfolioPage() {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 1.5 }}
-        className="py-40 px-4 sm:px-6 lg:px-8 bg-primary text-primary-foreground relative overflow-hidden"
+        className="py-40 px-4 sm:px-6 lg:px-8 bg-secondary text-secondary-foreground relative overflow-hidden"
       >
         <div className="mx-auto max-w-3xl text-center relative z-10">
           <motion.h2 
@@ -48,7 +48,7 @@ export default function PortfolioPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 1, delay: 0.3 }}
-            className="text-5xl md:text-7xl font-serif font-bold mb-8"
+            className="text-4xl md:text-5xl font-serif font-bold mb-8"
           >
             Imagine Your Event Here
           </motion.h2>
@@ -57,7 +57,7 @@ export default function PortfolioPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 1, delay: 0.5 }}
-            className="text-xl md:text-2xl mb-12 text-primary-foreground/80 font-light"
+            className="text-lg md:text-xl mb-12 text-secondary-foreground/80 font-light"
           >
             Let&apos;s discuss how we can create something equally beautiful and meaningful for you.
           </motion.p>
@@ -69,7 +69,7 @@ export default function PortfolioPage() {
           >
             <Link
               href="/contact"
-              className="inline-block bg-accent text-accent-foreground px-12 py-5 rounded-full font-bold text-lg hover:shadow-2xl hover:scale-105 transition-all duration-500 shadow-xl"
+              className="inline-block bg-accent text-accent-foreground px-10 py-4 rounded-full font-bold text-base hover:shadow-2xl hover:scale-105 transition-all duration-500 shadow-xl"
             >
               Start Your Project
             </Link>
