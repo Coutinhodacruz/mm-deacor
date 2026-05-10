@@ -1,10 +1,17 @@
 import type { Metadata } from 'next'
-import { Playfair_Display, Geist } from 'next/font/google'
+import { Cormorant_Garamond, Geist } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
-const _playfair = Playfair_Display({ subsets: ["latin"] });
-const _geist = Geist({ subsets: ["latin"] });
+const cormorant = Cormorant_Garamond({ 
+  subsets: ["latin"],
+  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-serif',
+});
+const geist = Geist({ 
+  subsets: ["latin"],
+  variable: '--font-sans',
+});
 
 export const metadata: Metadata = {
   title: 'mmmdecors - Memorable Magical Moments',
@@ -17,7 +24,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="bg-background">
+    <html lang="en" className={`bg-background ${cormorant.variable} ${geist.variable}`}>
       <body className="font-sans antialiased text-foreground">
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}

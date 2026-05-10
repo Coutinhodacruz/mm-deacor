@@ -95,9 +95,9 @@
 }
 
 @theme inline {
-  --font-sans: 'Geist', system-ui, -apple-system, sans-serif;
-  --font-serif: 'Playfair Display', 'Geist Fallback', serif;
-  --font-mono: 'Geist Mono', 'Geist Mono Fallback';
+  --font-sans: var(--font-sans), system-ui, -apple-system, sans-serif;
+  --font-serif: var(--font-serif), serif;
+  --font-mono: var(--font-mono);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -137,11 +137,14 @@
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
   * {
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground selection:bg-accent/30 selection:text-foreground;
   }
 }
 

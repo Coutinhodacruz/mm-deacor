@@ -2,48 +2,80 @@ import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { PortfolioGrid } from '@/components/portfolio-grid';
 import Link from 'next/link';
+import * as motion from 'framer-motion/client';
 
 export default function PortfolioPage() {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen bg-background selection:bg-accent/30">
       <Header />
 
       {/* Hero */}
-      <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-secondary">
-        <div className="mx-auto max-w-4xl text-center">
-          <h1 className="text-5xl md:text-6xl font-serif font-bold text-foreground mb-4">
+      <section className="pt-40 pb-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-secondary/50 to-background overflow-hidden">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
+          className="mx-auto max-w-4xl text-center"
+        >
+          <span className="text-accent font-medium tracking-widest uppercase text-sm mb-4 block">Our Work</span>
+          <h1 className="text-6xl md:text-8xl font-serif font-bold text-foreground mb-6 tracking-tight">
             Portfolio
           </h1>
-          <p className="text-lg text-muted-foreground">
-            A glimpse into the events we&apos;ve had the honor to design and create.
+          <p className="text-xl text-muted-foreground font-light max-w-2xl mx-auto">
+            A glimpse into the magical events we&apos;ve had the honor to design and create, where every detail tells a story.
           </p>
-        </div>
+        </motion.div>
       </section>
 
       {/* Portfolio Grid */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
+      <section className="py-32 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <PortfolioGrid />
         </div>
       </section>
 
       {/* CTA */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-primary text-primary-foreground">
-        <div className="mx-auto max-w-3xl text-center">
-          <h2 className="text-4xl font-serif font-bold mb-6">
-            Imagine Your Event Here
-          </h2>
-          <p className="text-lg mb-8 text-primary-foreground/90">
-            Let&apos;s discuss how we can create something equally beautiful and meaningful for you.
-          </p>
-          <Link
-            href="/contact"
-            className="inline-block bg-accent text-accent-foreground px-8 py-3 rounded-sm font-medium hover:opacity-90 transition-opacity"
+      <motion.section 
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1.5 }}
+        className="py-40 px-4 sm:px-6 lg:px-8 bg-primary text-primary-foreground relative overflow-hidden"
+      >
+        <div className="mx-auto max-w-3xl text-center relative z-10">
+          <motion.h2 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, delay: 0.3 }}
+            className="text-5xl md:text-7xl font-serif font-bold mb-8"
           >
-            Start Your Project
-          </Link>
+            Imagine Your Event Here
+          </motion.h2>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, delay: 0.5 }}
+            className="text-xl md:text-2xl mb-12 text-primary-foreground/80 font-light"
+          >
+            Let&apos;s discuss how we can create something equally beautiful and meaningful for you.
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, delay: 0.7 }}
+          >
+            <Link
+              href="/contact"
+              className="inline-block bg-accent text-accent-foreground px-12 py-5 rounded-full font-bold text-lg hover:shadow-2xl hover:scale-105 transition-all duration-500 shadow-xl"
+            >
+              Start Your Project
+            </Link>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       <Footer />
     </main>

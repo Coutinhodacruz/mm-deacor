@@ -9,7 +9,11 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
           <div>
-            <h3 className="text-2xl font-serif font-bold mb-4">mmmdecors</h3>
+            <img 
+              src="/WhatsApp_Image_2026-05-05_at_11.30.32_PM-removebg-preview.png" 
+              alt="mmmdecors Logo" 
+              className="h-32 w-auto object-contain mb-8 drop-shadow-sm grayscale brightness-[5]" 
+            />
             <p className="text-sm text-primary-foreground/80">
               Creating memorable, magical moments through refined event design.
             </p>
