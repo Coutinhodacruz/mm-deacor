@@ -39,20 +39,20 @@ export default function Home() {
             </p>
           </motion.div>
           <motion.div 
-            className="flex flex-col sm:flex-row gap-6 justify-center"
+            className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 justify-center"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, delay: 0.8, ease: "easeOut" }}
           >
             <Link
               href="/contact"
-              className="bg-accent text-accent-foreground px-12 py-4 rounded-full font-bold hover:shadow-[0_0_40px_rgba(var(--accent),0.5)] hover:scale-105 transition-all duration-300 text-lg shadow-lg"
+              className="bg-accent text-accent-foreground px-8 py-3 md:px-12 md:py-4 rounded-full font-bold hover:shadow-[0_0_40px_rgba(var(--accent),0.5)] hover:scale-105 transition-all duration-300 text-base md:text-lg shadow-lg"
             >
               Start Planning
             </Link>
             <Link
               href="/portfolio"
-              className="backdrop-blur-md bg-white/10 border border-white/20 text-white px-12 py-4 rounded-full font-bold hover:bg-white/20 transition-all duration-300 text-lg"
+              className="backdrop-blur-md bg-white/10 border border-white/20 text-white px-8 py-3 md:px-12 md:py-4 rounded-full font-bold hover:bg-white/20 transition-all duration-300 text-base md:text-lg"
             >
               View Portfolio
             </Link>
@@ -312,7 +312,7 @@ export default function Home() {
           >
             <Link
               href="/contact"
-              className="inline-block bg-accent text-accent-foreground px-12 py-5 rounded-full font-bold text-lg hover:shadow-[0_0_40px_rgba(var(--accent),0.5)] hover:scale-105 transition-all duration-500 shadow-2xl"
+              className="inline-block bg-accent text-accent-foreground px-8 py-4 md:px-12 md:py-5 rounded-full font-bold text-base md:text-lg hover:shadow-[0_0_40px_rgba(var(--accent),0.5)] hover:scale-105 transition-all duration-500 shadow-2xl"
             >
               Schedule a Consultation
             </Link>

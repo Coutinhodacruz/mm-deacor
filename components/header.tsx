@@ -41,7 +41,7 @@ export function Header() {
               <img 
                 src="/WhatsApp_Image_2026-05-05_at_11.30.32_PM-removebg-preview.png" 
                 alt="mmmdecors Logo" 
-                className="h-16 md:h-28 w-auto object-contain drop-shadow-sm" 
+                className="h-24 md:h-32 w-auto object-contain drop-shadow-sm origin-left" 
               />
             </motion.div>
           </Link>

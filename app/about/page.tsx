@@ -68,7 +68,7 @@ export default function AboutPage() {
               {/* Main Image Container */}
               <div className="relative z-10 rounded-[2rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] aspect-[4/5] max-w-md mx-auto lg:ml-0 bg-secondary">
                 <Image
-                  src="/nikie-portrait.png"
+                  src="/about.jpeg"
                   alt="Nikie Rowaiye - Event Designer"
                   fill
                   className="object-cover"

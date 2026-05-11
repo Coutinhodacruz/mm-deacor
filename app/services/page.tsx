@@ -180,7 +180,7 @@ export default function ServicesPage() {
           >
             <Link
               href="/contact"
-              className="inline-block bg-accent text-accent-foreground px-10 py-4 rounded-full font-bold text-base hover:shadow-2xl hover:scale-105 transition-all duration-500 shadow-xl"
+              className="inline-block bg-accent text-accent-foreground px-8 py-3 md:px-10 md:py-4 rounded-full font-bold text-base hover:shadow-2xl hover:scale-105 transition-all duration-500 shadow-xl"
             >
               Schedule Now
             </Link>
