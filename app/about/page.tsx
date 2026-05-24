@@ -35,6 +35,13 @@ export default function AboutPage() {
           transition={{ duration: 1.2, ease: "easeOut" }}
           className="mx-auto max-w-4xl text-center relative z-10"
         >
+          <div className="flex justify-center mb-8">
+            <img
+              src="/WhatsApp_Image_2026-05-05_at_11.30.32_PM-removebg-preview.png"
+              alt="mmmdecors"
+              className="h-24 w-auto object-contain opacity-60"
+            />
+          </div>
           <span className="text-accent font-bold tracking-[0.3em] uppercase text-xs mb-6 block">The Heart of mmmdecors</span>
           <h1 className="text-5xl md:text-7xl font-serif font-bold text-foreground mb-8 tracking-tight leading-none">
             About <span className="italic font-light text-accent/80">Us</span>
