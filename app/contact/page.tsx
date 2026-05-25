@@ -16,12 +16,12 @@ export default function ContactPage() {
           transition={{ duration: 1.2, ease: "easeOut" }}
           className="mx-auto max-w-4xl text-center"
         >
-          <span className="text-accent font-medium tracking-widest uppercase text-sm mb-4 block">Get In Touch</span>
+          <span className="text-accent font-medium tracking-widest uppercase text-sm mb-4 block">Event Design Questionnaire</span>
           <h1 className="text-4xl md:text-6xl font-serif font-bold text-foreground mb-6 tracking-tight">
-            Contact
+            Let&apos;s Plan Your Event
           </h1>
           <p className="text-lg text-muted-foreground font-light max-w-2xl mx-auto">
-            Let&apos;s discuss your vision and start planning something truly memorable together.
+            Thank you for your interest in mmmdecors. We specialize in creating bespoke event designs tailored to each client. Please complete this form so we can understand your vision.
           </p>
         </motion.div>
       </section>
@@ -31,9 +31,9 @@ export default function ContactPage() {
         <div className="mx-auto max-w-5xl">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-24">
             {[
-              { icon: "✉", label: "Email", value: "hello@mmmdecors.com", href: "mailto:hello@mmmdecors.com" },
-              { icon: "📱", label: "Phone", value: "(123) 456-7890", href: "tel:+1234567890" },
-              { icon: "📍", label: "Location", value: "Serving clients nationwide", href: null }
+              { icon: "✉", label: "Email", value: "nikie@mmmdecors.ca", href: "mailto:nikie@mmmdecors.ca" },
+              { icon: "📍", label: "Location", value: "Serving clients across Canada & beyond", href: null },
+              { icon: "📸", label: "Instagram", value: "@mmmdecors", href: "https://instagram.com/mmmdecors" }
             ].map((item, idx) => (
               <motion.div 
                 key={item.label}
@@ -63,9 +63,19 @@ export default function ContactPage() {
             transition={{ duration: 1.2, delay: 0.5 }}
             className="bg-white shadow-2xl rounded-3xl p-10 md:p-16 border border-accent/5"
           >
-            <h2 className="text-2xl md:text-3xl font-serif font-bold text-foreground mb-10 text-center">
-              Send us a Message
-            </h2>
+            <div className="text-center mb-10">
+              <img
+                src="/WhatsApp_Image_2026-05-05_at_11.30.32_PM-removebg-preview.png"
+                alt="mmmdecors"
+                className="h-16 w-auto object-contain mx-auto mb-4 opacity-70"
+              />
+              <h2 className="text-2xl md:text-3xl font-serif font-bold text-foreground mb-3">
+                Event Design Questionnaire
+              </h2>
+              <p className="text-sm text-muted-foreground max-w-xl mx-auto font-light leading-relaxed">
+                Once submitted, we will schedule a Zoom consultation to present your custom design concept and quote.
+              </p>
+            </div>
             <ContactForm />
           </motion.div>
         </div>
