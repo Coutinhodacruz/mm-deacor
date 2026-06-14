@@ -3,7 +3,7 @@ export const navigation = [
   { name: 'Services', href: '/services' },
   { name: 'About', href: '/about' },
   { name: 'Portfolio', href: '/portfolio' },
-  { name: 'Contact', href: '/contact' },
+  // { name: 'Contact', href: '/contact' },
 ];
 
 export const services = [
