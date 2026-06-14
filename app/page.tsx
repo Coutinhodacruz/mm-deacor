@@ -25,6 +25,25 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, ease: "easeOut" }}
           >
+            {/* MMM abbreviation badge */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1, delay: 0.2 }}
+              className="inline-flex items-center gap-2 mb-8 px-5 py-2 rounded-full border border-accent/40 bg-white/10 backdrop-blur-sm"
+            >
+              <span className="text-accent font-bold tracking-[0.25em] text-sm uppercase">M</span>
+              <span className="text-white/40 text-xs">·</span>
+              <span className="text-white/80 text-xs font-light italic">Memorable</span>
+              <span className="text-white/30 mx-1">|</span>
+              <span className="text-accent font-bold tracking-[0.25em] text-sm uppercase">M</span>
+              <span className="text-white/40 text-xs">·</span>
+              <span className="text-white/80 text-xs font-light italic">Magical</span>
+              <span className="text-white/30 mx-1">|</span>
+              <span className="text-accent font-bold tracking-[0.25em] text-sm uppercase">M</span>
+              <span className="text-white/40 text-xs">·</span>
+              <span className="text-white/80 text-xs font-light italic">Moments</span>
+            </motion.div>
             <h1 className="text-4xl md:text-5xl lg:text-7xl font-serif font-bold text-white mb-6 tracking-tight leading-[0.9] drop-shadow-2xl">
               Memorable Magical <br className="hidden md:block" /> <span className="text-accent italic font-light">Moments</span>
             </h1>
@@ -51,10 +70,10 @@ export default function Home() {
               Start Planning
             </Link>
             <Link
-              href="/portfolio"
+              href="/gallery"
               className="backdrop-blur-md bg-white/10 border border-white/20 text-white px-8 py-3 md:px-12 md:py-4 rounded-full font-bold hover:bg-white/20 transition-all duration-300 text-base md:text-lg"
             >
-              View Portfolio
+              View Gallery
             </Link>
           </motion.div>
         </div>
@@ -85,6 +104,14 @@ export default function Home() {
         </div>
         
         <div className="mx-auto max-w-4xl text-center relative z-10">
+          {/* Logo watermark */}
+          <div className="flex justify-center mb-8">
+            <img
+              src="/WhatsApp_Image_2026-05-05_at_11.30.32_PM-removebg-preview.png"
+              alt="mmmdecors"
+              className="h-20 w-auto object-contain opacity-20"
+            />
+          </div>
           <motion.p 
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
