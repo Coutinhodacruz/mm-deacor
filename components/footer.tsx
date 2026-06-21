@@ -95,6 +95,22 @@ export function Footer() {
             </a>
           </div>
         </div>
+
+        {/* Branding */}
+        <div className="mt-6 text-center text-xs text-primary-foreground/40">
+          <p>
+            Made with love{' '}
+            <span className="text-red-400">❤️</span>{' '}
+            <a
+              href="https://ireemedia.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary-foreground/50 hover:text-accent transition-colors underline underline-offset-2"
+            >
+              ireemedia.com
+            </a>
+          </p>
+        </div>
       </div>
     </footer>
   );
