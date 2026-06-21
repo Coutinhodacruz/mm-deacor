@@ -39,7 +39,7 @@ export function Header() {
               className="relative"
             >
               <img 
-                src="/WhatsApp_Image_2026-05-05_at_11.30.32_PM-removebg-preview.png" 
+                src="/mmmdecors-logo.png" 
                 alt="mmmdecors Logo" 
                 className="h-24 md:h-32 w-auto object-contain drop-shadow-sm origin-left" 
               />

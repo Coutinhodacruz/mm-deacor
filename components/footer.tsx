@@ -10,7 +10,7 @@ export function Footer() {
           {/* Brand */}
           <div className="md:col-span-2">
             <img 
-              src="/WhatsApp_Image_2026-05-05_at_11.30.32_PM-removebg-preview.png" 
+              src="/mmmdecors-logo.png" 
               alt="mmmdecors Logo" 
               className="h-32 w-auto object-contain mb-6 drop-shadow-sm grayscale brightness-[5]" 
             />
@@ -70,6 +70,9 @@ export function Footer() {
                 <a href="mailto:nikie@mmmdecors.ca" className="text-primary-foreground/70 hover:text-accent transition-colors break-all">
                   nikie@mmmdecors.ca
                 </a>
+              </li>
+              <li className="text-primary-foreground/50 pt-2 border-t border-primary-foreground/10">
+                Based in Toronto, serving the Greater Toronto Area and beyond
               </li>
             </ul>
             <div className="mt-6">

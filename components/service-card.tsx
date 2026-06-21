@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 interface ServiceCardProps {
   id: string;
   title: string;
@@ -21,7 +23,12 @@ export function ServiceCard({
           <h3 className="text-lg font-serif font-semibold text-foreground mb-2 group-hover:text-accent transition-colors duration-300">
             {title}
           </h3>
-          <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">{description}</p>
+          <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300 mb-4">{description}</p>
+          <div className="pt-3 border-t border-border/50">
+            <Link href="/contact" className="text-accent text-xs font-semibold uppercase tracking-wider flex items-center gap-1 group-hover:gap-2 transition-all duration-300">
+              Request a quote <span>→</span>
+            </Link>
+          </div>
         </div>
       </div>
     );
@@ -36,7 +43,7 @@ export function ServiceCard({
         </h3>
         <p className="text-foreground mb-4 group-hover:text-foreground/90 transition-colors duration-300">{description}</p>
         {details && (
-          <ul className="space-y-2">
+          <ul className="space-y-2 mb-6">
             {details.map((detail, idx) => (
               <li key={idx} className="text-sm text-muted-foreground group-hover:text-foreground/70 flex items-start gap-2 transition-colors duration-300">
                 <span className="text-accent mt-1 group-hover:scale-110 transition-transform duration-300 origin-left">→</span>
@@ -45,6 +52,11 @@ export function ServiceCard({
             ))}
           </ul>
         )}
+        <div className="mt-4 pt-4 border-t border-border/50">
+          <Link href="/contact" className="text-accent font-medium text-sm flex items-center gap-2 group-hover:gap-3 transition-all duration-300">
+            Request a quote <span className="text-lg leading-none">→</span>
+          </Link>
+        </div>
       </div>
     </div>
   );

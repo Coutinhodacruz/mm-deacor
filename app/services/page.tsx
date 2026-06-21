@@ -4,6 +4,12 @@ import { ServiceCard } from '@/components/service-card';
 import { services } from '@/lib/data';
 import Link from 'next/link';
 import * as motion from 'framer-motion/client';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Services | mmmdecors',
+  description: 'Wedding decor, floral design, backdrops & corporate event styling in Canada — mmmdecors.',
+};
 
 export default function ServicesPage() {
   return (
