@@ -205,7 +205,7 @@ export function ContactForm() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
         <div>
           <label className={labelClass}>Event Date <span className="text-accent">*</span></label>
-          <input {...register('eventDate')} type="text" placeholder="e.g. September 14, 2025" className={inputClass} />
+          <input {...register('eventDate')} type="date" className={inputClass} />
           {errors.eventDate && <p className={errorClass}>{errors.eventDate.message}</p>}
         </div>
         <div>
@@ -215,12 +215,12 @@ export function ContactForm() {
         </div>
         <div>
           <label className={labelClass}>Event Start Time <span className="text-accent">*</span></label>
-          <input {...register('eventStartTime')} type="text" placeholder="e.g. 5:00 PM" className={inputClass} />
+          <input {...register('eventStartTime')} type="time" className={inputClass} />
           {errors.eventStartTime && <p className={errorClass}>{errors.eventStartTime.message}</p>}
         </div>
         <div>
           <label className={labelClass}>Event End Time <span className="text-accent">*</span></label>
-          <input {...register('eventEndTime')} type="text" placeholder="e.g. 11:00 PM" className={inputClass} />
+          <input {...register('eventEndTime')} type="time" className={inputClass} />
           {errors.eventEndTime && <p className={errorClass}>{errors.eventEndTime.message}</p>}
         </div>
       </div>
