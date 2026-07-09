@@ -213,7 +213,7 @@ export default function AboutPage() {
               </p>
               <div className="relative h-96 rounded-3xl overflow-hidden shadow-2xl">
                 <Image 
-                  src="/hero-image.jpg"
+                  src="/image copy 18.png"
                   alt="Elegant details"
                   fill
                   className="object-cover"

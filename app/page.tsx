@@ -16,7 +16,7 @@ export default function Home() {
       <section 
         className="relative min-h-screen flex items-center justify-center overflow-hidden bg-cover bg-center"
         style={{ 
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), url('/white-and-pink-flowers-wedding-centerpiece-idea.jpg')` 
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), url('/image copy 9.png')` 
         }}
       >
         <div className="mx-auto max-w-5xl text-center relative z-10 w-full pt-20">
