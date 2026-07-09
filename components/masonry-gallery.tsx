@@ -4,9 +4,11 @@ import Image from 'next/image';
 import { galleryImages, galleryCategories, GalleryCategory } from '@/lib/data';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
+import { X } from 'lucide-react';
 
 export function MasonryGallery() {
   const [activeCategory, setActiveCategory] = useState<GalleryCategory>('Weddings');
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const filtered = galleryImages.filter(img => img.category === activeCategory);
 
@@ -38,6 +40,8 @@ export function MasonryGallery() {
           exit={{ opacity: 0 }}
           transition={{ duration: 0.4 }}
           className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
+
+          // className="columns-2 md:columns-3 lg:columns-4 gap-2 sm:gap-4"
         >
           {filtered.map((img, idx) => (
             <motion.div
@@ -45,7 +49,10 @@ export function MasonryGallery() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: (idx % 10) * 0.06 }}
-              className="relative overflow-hidden rounded-2xl group cursor-pointer shadow-sm hover:shadow-xl transition-all duration-500 h-full flex flex-col"
+              // className="relative overflow-hidden rounded-2xl group cursor-pointer shadow-sm hover:shadow-xl transition-all duration-500 h-full flex flex-col"
+
+              className="relative overflow-hidden rounded-2xl break-inside-avoid mb-2 sm:mb-4 group cursor-pointer shadow-sm hover:shadow-xl transition-all duration-500"
+              onClick={() => setSelectedImage(img.src)}
             >
               <div className="relative w-full h-full flex-grow overflow-hidden">
                 <Image
@@ -74,6 +81,46 @@ export function MasonryGallery() {
           No images in this category yet.
         </div>
       )}
+
+      {/* Lightbox Modal */}
+      <AnimatePresence>
+        {selectedImage && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm p-4"
+            onClick={() => setSelectedImage(null)}
+          >
+            <motion.div
+              initial={{ scale: 0.95, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.95, opacity: 0 }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              className="relative max-w-5xl w-full max-h-[90vh] flex items-center justify-center"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                onClick={() => setSelectedImage(null)}
+                className="absolute -top-12 right-0 text-white/70 hover:text-white transition-colors p-2 z-50"
+              >
+                <X size={32} />
+              </button>
+              <div className="relative w-full h-full flex justify-center items-center">
+                <Image
+                  src={selectedImage}
+                  alt="Enlarged gallery image"
+                  width={1200}
+                  height={1200}
+                  className="object-contain max-h-[85vh] w-auto rounded-lg shadow-2xl"
+                  quality={100}
+                  priority
+                />
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

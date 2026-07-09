@@ -3,6 +3,12 @@ import { Footer } from '@/components/footer';
 import Link from 'next/link';
 import Image from 'next/image';
 import * as motion from 'framer-motion/client';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'About | mmmdecors',
+  description: 'Meet Nikie Rowaiye, certified wedding planner and event designer behind mmmdecors.',
+};
 
 export default function AboutPage() {
   const credentials = [
@@ -37,8 +43,8 @@ export default function AboutPage() {
         >
           <div className="flex justify-center mb-8">
             <img
-              src="/WhatsApp_Image_2026-05-05_at_11.30.32_PM-removebg-preview.png"
-              alt="mmmdecors"
+              src="/mmmdecors-logo.png"
+              alt="mmmdecors logo — Memorable Magical Moments event design"
               className="h-24 w-auto object-contain opacity-60"
             />
           </div>
@@ -47,7 +53,7 @@ export default function AboutPage() {
             About <span className="italic font-light text-accent/80">Us</span>
           </h1>
           <p className="text-lg md:text-xl text-foreground/70 font-serif italic mb-10 max-w-2xl mx-auto leading-relaxed">
-            At mmmdecors, design is not just what we do - it&apos;s who we are.
+            At mmmdecors, design is not just what we do — it&apos;s who we are.
           </p>
           <div className="w-24 h-1 bg-accent/20 mx-auto rounded-full" />
         </motion.div>
@@ -117,16 +123,16 @@ export default function AboutPage() {
 
               <div className="space-y-4 text-base text-foreground/70 leading-normal font-light max-w-2xl">
                 <p>
-                  Led by Nikie Rowaiye, a certified wedding planner and certified event designer, mmmdecors brings years of experience, creativity, and thoughtful execution to every event. Nike&apos;s journey into the world of design started early, inspired by her mother, who owned a design company. Growing up in a creative environment shaped her eye for detail and her passion for transforming ideas into beautiful realities.
+                  Led by Nikie Rowaiye, a certified wedding planner and certified event designer, mmmdecors brings years of experience, creativity, and thoughtful execution to every event. Nikie&apos;s journey into the world of design started early, inspired by her mother, who owned a design company. Growing up in a creative environment shaped her eye for detail and her passion for transforming ideas into beautiful realities.
                 </p>
                 <p>
-                  Nike believes that no two events should ever feel the same. Her approach is centered on personalization - intentionally weaving each client&apos;s personality, culture, and story into the design. Whether it&apos;s a subtle detail or a bold statement piece, every element is carefully curated to create an experience that feels authentic and unique.
+                  Nikie believes that no two events should ever feel the same. Her approach is centered on personalization - intentionally weaving each client&apos;s personality, culture, and story into the design. Whether it&apos;s a subtle detail or a bold statement piece, every element is carefully curated to create an experience that feels authentic and unique.
                 </p>
                 <p>
-                  Known for her distinctive style and meticulous attention to detail, Nike combines elegance with creativity to deliver events that are not only visually stunning but also meaningful. Her goal is always to create moments that linger - events that feel seamless, elevated, and truly special for both clients and their guests.
+                  Known for her distinctive style and meticulous attention to detail, Nikie combines elegance with creativity to deliver events that are not only visually stunning but also meaningful. Her goal is always to create moments that linger - events that feel seamless, elevated, and truly special for both clients and their guests.
                 </p>
                 <p>
-                  When she&apos;s not designing or planning, Nike enjoys relaxing with her favorite TV shows, exploring new ideas and inspirations - moments that continue to fuel her creativity and passion for what she does.
+                  When she&apos;s not designing or planning, Nikie enjoys relaxing with her favorite TV shows, exploring new ideas and inspirations - moments that continue to fuel her creativity and passion for what she does.
                 </p>
                 <p className="text-xl font-serif font-bold text-accent pt-6 leading-tight">
                   At mmmdecors, we don&apos;t just plan events - we create memorable, magical moments that leave a lasting impression.
@@ -140,6 +146,7 @@ export default function AboutPage() {
                   <div>
                     <h4 className="font-bold text-foreground text-sm uppercase tracking-wide">Nikie Rowaiye</h4>
                     <p className="text-xs text-muted-foreground uppercase tracking-widest">Founder & Lead Designer</p>
+                    <p className="text-xs text-muted-foreground mt-2 font-light">Based in Toronto, serving the Greater Toronto Area and beyond</p>
                   </div>
                 </div>
               </div>

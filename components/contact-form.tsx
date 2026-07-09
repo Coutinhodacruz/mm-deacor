@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
@@ -57,6 +57,48 @@ const inputClass =
 const labelClass = 'block text-sm font-medium text-foreground mb-1.5';
 const errorClass = 'mt-1 text-xs text-destructive';
 
+// ─── Snackbar Component ─────────────────────────────────────────────────────
+type SnackbarProps = {
+  message: string;
+  type: 'success' | 'error';
+  visible: boolean;
+  onClose: () => void;
+};
+
+function Snackbar({ message, type, visible, onClose }: SnackbarProps) {
+  return (
+    <div
+      className={`fixed bottom-6 left-1/2 z-50 -translate-x-1/2 transition-all duration-500 ease-out ${
+        visible
+          ? 'translate-y-0 opacity-100'
+          : 'translate-y-8 opacity-0 pointer-events-none'
+      }`}
+    >
+      <div
+        className={`flex items-center gap-3 px-6 py-4 rounded-2xl shadow-2xl backdrop-blur-sm min-w-[320px] max-w-[90vw] ${
+          type === 'success'
+            ? 'bg-emerald-600/95 text-white'
+            : 'bg-red-600/95 text-white'
+        }`}
+      >
+        <span className="text-xl flex-shrink-0">
+          {type === 'success' ? '✓' : '✕'}
+        </span>
+        <p className="text-sm font-medium flex-1 leading-snug">{message}</p>
+        <button
+          onClick={onClose}
+          className="flex-shrink-0 ml-2 p-1 rounded-full hover:bg-white/20 transition-colors"
+          aria-label="Dismiss"
+        >
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+            <path d="M4 4l8 8M12 4l-8 8" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  );
+}
+
 function SectionHeader({ number, title }: { number: string; title: string }) {
   return (
     <div className="flex items-center gap-4 mb-6 mt-10 first:mt-0">
@@ -71,7 +113,27 @@ function SectionHeader({ number, title }: { number: string; title: string }) {
 
 export function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [snackbar, setSnackbar] = useState<{ message: string; type: 'success' | 'error'; visible: boolean }>({
+    message: '',
+    type: 'success',
+    visible: false,
+  });
+
+  const showSnackbar = (message: string, type: 'success' | 'error') => {
+    setSnackbar({ message, type, visible: true });
+  };
+
+  const hideSnackbar = () => {
+    setSnackbar((prev) => ({ ...prev, visible: false }));
+  };
+
+  // Auto-dismiss after 6 seconds
+  useEffect(() => {
+    if (snackbar.visible) {
+      const timer = setTimeout(hideSnackbar, 6000);
+      return () => clearTimeout(timer);
+    }
+  }, [snackbar.visible]);
 
   const {
     register,
@@ -88,13 +150,28 @@ export function ContactForm() {
   const onSubmit = async (data: QuestionnaireData) => {
     setIsSubmitting(true);
     try {
-      await new Promise((resolve) => setTimeout(resolve, 1200));
-      console.log('Questionnaire submitted:', data);
-      setSubmitSuccess(true);
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.message || 'Something went wrong.');
+      }
+
       reset();
-      setTimeout(() => setSubmitSuccess(false), 8000);
+      showSnackbar('Thank you! Your questionnaire has been submitted successfully. We\'ll be in touch within 24–48 hours.', 'success');
     } catch (error) {
       console.error('Submission error:', error);
+      showSnackbar(
+        error instanceof Error
+          ? error.message
+          : 'Failed to submit. Please try again or email us directly at nikie@mmmdecors.ca',
+        'error'
+      );
     } finally {
       setIsSubmitting(false);
     }
@@ -102,14 +179,6 @@ export function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-2">
-      {submitSuccess && (
-        <div className="p-5 bg-accent/10 border border-accent text-accent rounded-xl text-center">
-          <p className="font-semibold mb-1">Thank you for completing the mmmdecors questionnaire!</p>
-          <p className="text-sm text-foreground/70">
-            We will review your responses and reach out to schedule a Zoom consultation where we will present your custom design concept and associated quote. We look forward to bringing your vision to life.
-          </p>
-        </div>
-      )}
 
       {/* 1. Contact Information */}
       <SectionHeader number="1" title="Contact Information" />
@@ -136,7 +205,7 @@ export function ContactForm() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
         <div>
           <label className={labelClass}>Event Date <span className="text-accent">*</span></label>
-          <input {...register('eventDate')} type="text" placeholder="e.g. September 14, 2025" className={inputClass} />
+          <input {...register('eventDate')} type="date" className={inputClass} />
           {errors.eventDate && <p className={errorClass}>{errors.eventDate.message}</p>}
         </div>
         <div>
@@ -146,12 +215,12 @@ export function ContactForm() {
         </div>
         <div>
           <label className={labelClass}>Event Start Time <span className="text-accent">*</span></label>
-          <input {...register('eventStartTime')} type="text" placeholder="e.g. 5:00 PM" className={inputClass} />
+          <input {...register('eventStartTime')} type="time" className={inputClass} />
           {errors.eventStartTime && <p className={errorClass}>{errors.eventStartTime.message}</p>}
         </div>
         <div>
           <label className={labelClass}>Event End Time <span className="text-accent">*</span></label>
-          <input {...register('eventEndTime')} type="text" placeholder="e.g. 11:00 PM" className={inputClass} />
+          <input {...register('eventEndTime')} type="time" className={inputClass} />
           {errors.eventEndTime && <p className={errorClass}>{errors.eventEndTime.message}</p>}
         </div>
       </div>
@@ -306,6 +375,13 @@ export function ContactForm() {
           Once submitted, we will schedule a Zoom consultation to present your custom design concept and quote.
         </p>
       </div>
+      {/* Snackbar Toast */}
+      <Snackbar
+        message={snackbar.message}
+        type={snackbar.type}
+        visible={snackbar.visible}
+        onClose={hideSnackbar}
+      />
     </form>
   );
 }

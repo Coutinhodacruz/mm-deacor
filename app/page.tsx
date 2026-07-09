@@ -107,7 +107,7 @@ export default function Home() {
           {/* Logo watermark */}
           <div className="flex justify-center mb-8">
             <img
-              src="/WhatsApp_Image_2026-05-05_at_11.30.32_PM-removebg-preview.png"
+              src="/mmmdecors-logo.png"
               alt="mmmdecors"
               className="h-20 w-auto object-contain opacity-20"
             />

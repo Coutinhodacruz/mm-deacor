@@ -10,7 +10,7 @@ export function Footer() {
           {/* Brand */}
           <div className="md:col-span-2">
             <img 
-              src="/WhatsApp_Image_2026-05-05_at_11.30.32_PM-removebg-preview.png" 
+              src="/mmmdecors-logo.png" 
               alt="mmmdecors Logo" 
               className="h-32 w-auto object-contain mb-6 drop-shadow-sm grayscale brightness-[5]" 
             />
@@ -71,6 +71,9 @@ export function Footer() {
                   nikie@mmmdecors.ca
                 </a>
               </li>
+              <li className="text-primary-foreground/50 pt-2 border-t border-primary-foreground/10">
+                Based in Toronto, serving the Greater Toronto Area and beyond
+              </li>
             </ul>
             <div className="mt-6">
               <Link
@@ -94,6 +97,22 @@ export function Footer() {
               Pinterest
             </a>
           </div>
+        </div>
+
+        {/* Branding */}
+        <div className="mt-6 text-center text-xs text-primary-foreground/40">
+          <p>
+            Made with love{' '}
+            <span className="text-red-400">❤️</span>{' '}
+            <a
+              href="https://ireemedia.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary-foreground/50 hover:text-accent transition-colors underline underline-offset-2"
+            >
+              ireemedia.com
+            </a>
+          </p>
         </div>
       </div>
     </footer>
